@@ -1,0 +1,49 @@
+{
+  "name": "skinnyfit-api-nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "async": "^2.6.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.2",
+    "chai": "^4.1.2",
+    "express": "^4.15.3",
+    "ftp": "^0.3.10",
+    "hash-generator": "^0.1.0",
+    "ip": "^1.1.5",
+    "ip-address": "^5.8.9",
+    "jsftp": "^2.1.3",
+    "jsonexport": "^2.0.11",
+    "mocha": "^5.0.5",
+    "moment": "^2.19.1",
+    "moment-timezone": "^0.5.14",
+    "mongodb": "^2.2.30",
+    "mongoose": "^5.0.12",
+    "node-inspect": "^1.11.2",
+    "node-mandrill": "^1.0.1",
+    "request": "^2.83.0",
+    "request-ip": "^2.0.2",
+    "request-promise": "^4.2.2",
+    "sinon": "^4.4.10",
+    "useragent": "^2.2.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "devstart": "commonSetup=localhost nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smashtechlive/skinnyfit-api-nodejs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/smashtechlive/skinnyfit-api-nodejs/issues"
+  },
+  "homepage": "https://github.com/smashtechlive/skinnyfit-api-nodejs#readme"
+}
