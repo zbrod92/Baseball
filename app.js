@@ -3,7 +3,7 @@ const app = express();
 let bodyParser = require('body-parser');
 let player = require('./baseball/player/index');
 let team = require('./baseball/team/index');
-
+let config = require('./lib/config');
 
 app.set('json spaces', 2);
 
