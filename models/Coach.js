@@ -2,7 +2,8 @@ let mongoose = require('mongoose');
 let ObjectId = mongoose.Schema.Types.ObjectId;
 
 let coaches = new mongoose.Schema({
-    type: 'String',
+    firstName: 'String',
+    lastName: 'String',
 
 }, {
   strict: false

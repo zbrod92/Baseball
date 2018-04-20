@@ -1,7 +1,7 @@
 let mongoose = require('mongoose');
 let ObjectId = mongoose.Schema.Types.ObjectId;
 
-let Teams = new mongoose.Schema({
+let concession = new mongoose.Schema({
     players: [{type: ObjectId, ref: 'player'}],
     coaches: [{type: ObjectId, ref: 'coaches'}],
     owner: {type: ObjectId, ref: 'owner'},
@@ -13,8 +13,8 @@ let Teams = new mongoose.Schema({
   strict: false
 });
 
-let Pages = mongoose.model('teams', teams);
+let Concession = mongoose.model('concession', concession);
 
 module.exports = {
-  Teams:Teams,
+    Concession:Concession,
 };

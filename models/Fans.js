@@ -1,20 +1,16 @@
 let mongoose = require('mongoose');
 let ObjectId = mongoose.Schema.Types.ObjectId;
 
-let Teams = new mongoose.Schema({
-    players: [{type: ObjectId, ref: 'player'}],
-    coaches: [{type: ObjectId, ref: 'coaches'}],
-    owner: {type: ObjectId, ref: 'owner'},
-    concessions: [{type: ObjectId, ref: 'concession'}],
-    parking: {type: ObjectId, ref: 'parking'},
-    fans: {type: ObjectId, ref: 'fans'},
-
+let fans = new mongoose.Schema({
+    fanatacismMeter: {type: String},
+    total: {type: Number},
+    team: {type: ObjectId, ref: 'team'},
 }, {
   strict: false
 });
 
-let Pages = mongoose.model('teams', teams);
+let Fans = mongoose.model('fans', fans);
 
 module.exports = {
-  Teams:Teams,
+    Fans:Fans,
 };

@@ -1,25 +1,22 @@
 let mongoose = require('mongoose');
 let ObjectId = mongoose.Schema.Types.ObjectId;
 
-let team = new mongoose.Schema({
+let minorLeague = new mongoose.Schema({
     name: 'String',
-    nickName: 'String',
-
+    city: 'String',
     players: [{type: ObjectId, ref: 'player'}],
     coaches: [{type: ObjectId, ref: 'coaches'}],
     owner: {type: ObjectId, ref: 'owner'},
     concessions: [{type: ObjectId, ref: 'concession'}],
     parking: {type: ObjectId, ref: 'parking'},
     fans: {type: ObjectId, ref: 'fans'},
-    // eventually make both home and away colors an array with multiple jerseys, but have one be a primary that is used most often
-    homeColor: 'String',
-    awayColors: 'String'
+    mlbTeam: {type: ObjectId, ref: 'teams'}
 }, {
   strict: false
 });
 
-let Team = mongoose.model('team', team);
+let MinorLeague = mongoose.model('minorLeague', minorLeague);
 
 module.exports = {
-  Team:Team,
+    MinorLeague:MinorLeague,
 };
