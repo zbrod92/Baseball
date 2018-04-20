@@ -32,9 +32,11 @@ app.listen(3003, function () {
   console.log('Example app listening on port 3003!');
 });
 
+
 /*
 balls and strikes count
 https://codereview.stackexchange.com/questions/11419/baseball-game-state-class-in-python-looking-for-feedback
  */
 
-
+// TODO
+// add in commentary like i did for the basketball simulator

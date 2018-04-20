@@ -9,6 +9,7 @@ let player = new mongoose.Schema({
     homeTown: 'String',
     college: 'String',
     personalCoolFacts: [{type: String}],
+    yearsInLeague: Number,
     // show current teams and past teams, current team in position [0]
     team: [{type: ObjectId, ref: 'team'}],
     position: {type: String},
