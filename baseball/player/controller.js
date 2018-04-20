@@ -1,5 +1,5 @@
 let hasOwnProperties = require('../../lib/util').hasOwnProperties;
-let userController = require('./module');
+let playerController = require('./module');
 
 /**
  * Create a player
@@ -7,9 +7,9 @@ let userController = require('./module');
  * @param res {Object} - Express response object
  * @returns response {Promise} - player information, and updated count
  */
-function createUser(req, res) {
+function createPlayer(req, res) {
   return new Promise((resolve) => {
-    return resolve(userController.createUser());
+    return resolve(playerController.createPlayer());
   })
     .then((response) => {
         return res.json({
@@ -29,9 +29,9 @@ function createUser(req, res) {
  * @param res {Object} - Express response object
  * @returns response {Promise} - player information, and updated count
  */
-function findUser(req, res) {
+function findPlayer(req, res) {
   return new Promise((resolve) => {
-    return resolve(userController.findUser());
+    return resolve(playerController.findPlayer());
   })
     .then((response) => {
       return res.json(response);
@@ -44,6 +44,6 @@ function findUser(req, res) {
 }
 
 module.exports = {
-  createUser: createUser,
-  findUser: findUser,
+  createPlayer: createPlayer,
+    findPlayer: findPlayer,
 };

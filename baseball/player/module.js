@@ -1,11 +1,11 @@
-let User = require('../../models/User').User;
+let Player = require('../../models/Player').Player;
 
 /**
- * Create a User.
- * @returns {Promise} Returns the count of how many users were created.
+ * Create a Player.
+ * @returns {Promise} Returns the count of how many players were created.
  */
-function createUser() {
-  return User.create({})
+function createPlayer() {
+  return Player.create({})
     .catch((err) => {
       if(err) {
         return err;
@@ -14,11 +14,11 @@ function createUser() {
 }
 
 /**
- * Find a User.
- * @returns {Promise} Returns the users information.
+ * Find a player.
+ * @returns {Promise} Returns the players information.
  */
-function findUser() {
-  return User.find({}).lean()
+function findPlayer() {
+  return Player.find({}).lean()
     .catch((err) => {
       if(err) {
         return err;
@@ -27,6 +27,6 @@ function findUser() {
 }
 
 module.exports = {
-  createUser: createUser,
-  findUser: findUser,
+    createPlayer: createPlayer,
+    findPlayer: findPlayer,
 };

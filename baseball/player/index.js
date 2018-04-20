@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
-let userController = require('./controller');
+let playerController = require('./controller');
 
 // Routes
-router.get('/find', userController.findUser);
-router.post('/create', userController.createUser);
+router.get('/find', playerController.findPlayer);
+router.post('/create', playerController.createPlayer);
 
 module.exports = router;
