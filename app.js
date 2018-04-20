@@ -1,8 +1,8 @@
 const express = require('express');
 const app = express();
 let bodyParser = require('body-parser');
-let player = require('./skinnyfit/player/index');
-let team = require('./skinnyfit/team/index');
+let player = require('./baseball/player/index');
+let team = require('./baseball/team/index');
 
 
 app.set('json spaces', 2);
