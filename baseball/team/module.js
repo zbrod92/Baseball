@@ -1,34 +1,15 @@
-let Page = require('../../models/Page').Pages;
-let PagesTwo = require('../../models/PageTwo').PagesTwo;
-let mongoose = require('mongoose');
-let ObjectId = mongoose.Types.ObjectId;
-let Product = require('../../models/Product').Product;
-let Chapter = require('../../models/Chapter').Chapters;
+let Team = require('../../models/Team').Team;
 
-
-
-/**
- * Get all pages.
- * @returns {Promise} Returns all team data
- */
-function getPages() {
-  return Page.find({})
-    .catch((err) => {
-      if(err) {
-        return err;
-      }
-    });
-}
 
 /**
  * Find a team given a url.
  * @returns {Promise} the given team object
  */
-function getPage(url) {
+function getTeam(url) {
   let query = {
-    url: url
+
   };
-  return Page.find(query)
+  return Team.find(query)
     .catch((err) => {
       if(err) {
         return err;
@@ -41,7 +22,7 @@ function getPage(url) {
  * @returns {Promise} Returns the pages array
  */
 function all() {
-  return Page.find()
+  return Team.find()
     .catch((err) => {
       if(err) {
         return err;
@@ -54,31 +35,14 @@ function all() {
  * @returns {Promise} the created record
  */
 function dummy() {
-let insert = {"name":"Detox","__v":0,"slug":"detox","adName":"detox","sku":"SF-DT"};
-  return Product.create(insert)
+let insert = {};
+  return Team.create(insert)
     .catch((err) => {
       if(err) {
         return err;
       }
     });
 }
-
-// TODO Should we include more than just the offerIds in the pages collection
-// TODO would including the associated offer record in that db be a good idea instead of just the id?
-// /**
-//  * Get offers
-//  * @returns {Promise} Returns the updated team record with the offer
-//  */
-//
-//
-// function getOffersByPageId(pageId)
-// return Offer.findById(pageId)
-//     .catch((err) => {
-//       if(err) {
-//         return err;
-//       }
-//     });
-// }
 
 function extractIds(objectArray) {
   return new Promise((resolve) => {
@@ -102,12 +66,11 @@ function extractIds(objectArray) {
 function combine(url) {
   return new Promise((resolve) => {
     let query= {
-      url: url
     };
-    return resolve(Page.find(query)
-        .populate('offers')
-        .populate('product')
-        .populate('chapters')
+    return resolve(Team.find(query)
+        .populate('Team')
+        // .populate('Players')
+        // .populate('Owners')
         .exec())
   }).catch((err) => {
     if(err) {
@@ -117,10 +80,10 @@ function combine(url) {
 }
 
 module.exports = {
-  getPage: getPage,
-    getPages: getPages,
-    extractIds: extractIds,
+    getTeam:getTeam,
     all: all,
-    dummy:dummy,
-    combine:combine
+    dummy: dummy,
+    extractIds: extractIds,
+    combine:combine,
+    combine:
 };
