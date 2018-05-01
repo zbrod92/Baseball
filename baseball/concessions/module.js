@@ -1,8 +1,8 @@
 let Concession = require('../../models/Concessions').Concession;
 
 /**
- * Create a Player.
- * @returns {Promise} Returns the count of how many players were created.
+ * Create a concession.
+ * @returns {Promise} Returns the count of how many concessions were created.
  */
 function createConcession(concession) {
     return new Promise((resolve) => {
@@ -15,8 +15,8 @@ function createConcession(concession) {
 }
 
 /**
- * Find a player.
- * @returns {Promise} Returns the players information.
+ * Find a concession.
+ * @returns {Promise} Returns the concession information.
  */
 function findConcession(concession) {
     return new Promise((resolve) => {
