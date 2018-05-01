@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-let playerController = require('./controller');
+let concessionController = require('./controller');
 
 // Routes
 // router.get('/find', playerController.findPlayer);
